@@ -1,0 +1,6 @@
+#!/bin/sh
+# Copy to ~/duckdns/duck.sh, fill in your values, then: chmod 700 ~/duckdns/duck.sh
+# Cron (crontab -e):  */5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
+# Never commit the real file: it contains your Duck DNS token.
+echo url="https://www.duckdns.org/update?domains=YOUR-SUBDOMAIN&token=YOUR-DUCKDNS-TOKEN&ip=" \
+  | curl -k -o ~/duckdns/duck.log -K -

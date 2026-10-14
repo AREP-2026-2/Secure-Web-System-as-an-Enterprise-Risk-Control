@@ -1,0 +1,30 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color-scheme: light dark;
+}
+
+main {
+  max-width: 640px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+button {
+  margin-right: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #888;
+  cursor: pointer;
+}
+
+pre {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(127, 127, 127, 0.15);
+  border-radius: 6px;
+  white-space: pre-wrap;
+}
+
+.error {
+  color: #c62828;
+}

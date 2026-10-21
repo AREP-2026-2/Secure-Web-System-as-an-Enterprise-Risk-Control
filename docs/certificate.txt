@@ -1,0 +1,23 @@
+$ openssl s_client -connect sebas-risk-lab.duckdns.org:443 -servername sebas-risk-lab.duckdns.org | openssl x509 -noout -subject -issuer -dates -ext subjectAltName
+subject=CN=sebas-risk-lab.duckdns.org
+issuer=C=US, O=Let's Encrypt, CN=YE2
+notBefore=Oct 21 03:39:44 2026 GMT
+notAfter=Jan 19 03:39:43 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:sebas-risk-lab.duckdns.org
+Verify return code: 0 (ok)
+
+$ curl -sI http://sebas-risk-lab.duckdns.org/
+HTTP/1.1 301 Moved Permanently
+Location: https://sebas-risk-lab.duckdns.org/
+
+$ curl -si https://sebas-risk-lab.duckdns.org/api/risk-status
+HTTP/1.1 401 
+WWW-Authenticate: Bearer
+
+$ curl --max-time 8 http://54.227.130.118:8080/
+connection timed out (port 8080 not public)
+
+$ sudo certbot renew --dry-run
+Congratulations, all simulated renewals succeeded:
+  /etc/letsencrypt/live/sebas-risk-lab.duckdns.org/fullchain.pem (success)

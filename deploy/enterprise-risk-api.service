@@ -6,9 +6,9 @@ After=network.target
 [Service]
 User=riskapi
 WorkingDirectory=/opt/enterprise-risk-api
-Environment="SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI=https://YOUR_TENANT.us.auth0.com/"
+Environment="SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI=https://dev-kf4ghetx40fgzuc6.us.auth0.com/"
 Environment="SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_AUDIENCES=https://enterprise-risk-api"
-Environment="APP_CORS_ALLOWED_ORIGINS=https://YOUR-SUBDOMAIN.duckdns.org"
+Environment="APP_CORS_ALLOWED_ORIGINS=https://sebas-risk-lab.duckdns.org"
 # Listen only on loopback: Apache is the only public entry point.
 Environment="SERVER_ADDRESS=127.0.0.1"
 ExecStart=/usr/bin/java -jar /opt/enterprise-risk-api/app.jar
